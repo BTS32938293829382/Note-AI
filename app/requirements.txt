@@ -1,7 +1,7 @@
 fastapi
 uvicorn
-transformers
 tiktoken
 protobuf
 sentencepiece
-torch>=2.1.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.1.0+cpu --index-url https://download.pytorch.org/whl/cpu
+transformers>=4.40.0
