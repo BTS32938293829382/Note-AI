@@ -19,6 +19,8 @@ RUN apt-get update && apt-get install -y \
 COPY app/requirements.txt .
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir tiktoken protobuf
+
 
 # 6. Uygulama dosyalarını kopyala
 COPY app/ .
