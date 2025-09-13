@@ -1,18 +1,10 @@
 version: "3.9"
 
 services:
-  noteai:
+  summarizer:
     build: .
-    container_name: noteai_app
+    container_name: mt5-summarizer
     ports:
-      - "2015:2015"         # Uvicorn portu
+      - "2015:2015"
     environment:
-      - ENV=production      # Production environment
-      - PORT=2015           # Uvicorn portunu belirtmek isteyebilirsin
-    restart: always
-    networks:
-      - coolify_network
-
-networks:
-  coolify_network:
-    external: true          # Coolify kendi network'ünü kullanıyorsa external true
+      - API_KEY=${API_KEY} # Coolify secrets
