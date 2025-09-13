@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  noteai:
+    build: .
+    container_name: noteai_app
+    ports:
+      - "2015:2015"         # Uvicorn portu
+    environment:
+      - ENV=production      # Production environment
+      - PORT=2015           # Uvicorn portunu belirtmek isteyebilirsin
+    restart: always
+    networks:
+      - coolify_network
+
+networks:
+  coolify_network:
+    external: true          # Coolify kendi network'ünü kullanıyorsa external true
