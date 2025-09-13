@@ -12,5 +12,5 @@ class NoteRequest(BaseModel):
 
 @app.post("/summarize")
 def summarize(note: NoteRequest):
-    summary = summarizer(note.text, max_length=150, min_length=30, do_sample=False)
+    summary = summarizer(note.text, max_length=1500, min_length=50, do_sample=False)
     return {"summary": summary[0]['summary_text']}
